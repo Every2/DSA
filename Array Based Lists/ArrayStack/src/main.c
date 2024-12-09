@@ -19,7 +19,7 @@ int main() {
 
   list_set(&arr, 0, 10);
 
-  printf("Após setar o primeiro valor pra 10\n");
+  printf("After set first value to 10\n");
   for (int i = 0; i < 9; i++)
     printf("%d\n", list_get(&arr, i));
 
