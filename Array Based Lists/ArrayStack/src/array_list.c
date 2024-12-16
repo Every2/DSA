@@ -37,7 +37,7 @@ void list_add(ArrayList *array, unsigned int position, int value) {
         list_resize(array);
     }
 
-    for (int i = position; i <= array->size - 1; i++)
+    for (int i = array->size; i > position; i--)
         array->data[i + 1] = array->data[i];
 
     array->data[position] = value;
@@ -62,6 +62,7 @@ int list_remove(ArrayList *array, unsigned int position) {
 
     return aux;
 }
+
 
 void list_resize(ArrayList *array) {
     void *aux = realloc(array->data, 2 * array->size * sizeof *(array->data));
