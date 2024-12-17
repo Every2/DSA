@@ -35,7 +35,7 @@ Example of Error:
 
 ```
 
-fn get(arr: ArrayList<T>, position: int) -> (T, Error)
+fn get(arr: ArrayList<T>, position: int) -> {T, Error}
 
 ```
 
