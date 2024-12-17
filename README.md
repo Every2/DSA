@@ -5,7 +5,7 @@ Most of implementations are based on [Open Data Structures Book](https://opendat
 
 # How to Run
 
-Go to some chapters
+Go to some chapter and type:
 ```
 make run
 ```
