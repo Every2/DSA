@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-Most of implementations are based on [Open Data Structures Book](https://opendatastructures.org/)
+Most implementations are based on the [Open Data Structures Book](https://opendatastructures.org/)
 
 
 # How to Run
