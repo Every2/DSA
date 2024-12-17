@@ -1,6 +1,6 @@
 # Array Stack
 
-For convenience, we call `"Array Stack"` `Array List` because we do not implement FIFO operations, so the names are changed because of that.
+For convenience, we call `"Array Stack"` as `Array List` because we do not implement FIFO operations, so the names are changed because of that.
 
 # What is an Array List?
 
