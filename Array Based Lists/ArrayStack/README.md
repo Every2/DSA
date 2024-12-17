@@ -9,7 +9,9 @@ An array list can be defined as a sequential container like an Array on the heap
 # Attributes
 
 `Data: T`: An array pointer to a sequence of objects.
+
 `Capacity: uint`: The total capacity of objects the list can hold.
+
 `Size: uint`: The number of elements currently in the list.
 
 # Operations
