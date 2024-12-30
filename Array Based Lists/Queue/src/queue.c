@@ -25,7 +25,7 @@ bool enqueue(Queue *self, int value) {
 
     self->data[(self->start + self->size) % self->capacity] = value;
     self->size++;
-	return true;
+    return true;
 }
 
 int dequeue(Queue *self) {
@@ -47,15 +47,15 @@ int dequeue(Queue *self) {
 }
 
 void resize(Queue *self) {
-	int *aux = malloc(MAX(1, 2 * self->size) * sizeof *(self->data));
+    int *aux = malloc(MAX(1, 2 * self->size) * sizeof *(self->data));
 
-	for (int i = 0; i < self->size; i++)
-		aux[i] = self->data[(self->start + i) % self->capacity]; 
+    for (int i = 0; i < self->size; i++)
+        aux[i] = self->data[(self->start + i) % self->capacity];
 
-	free(self->data);
-	self->capacity = MAX(1, 2 * self->size);
-	self->data = aux;
-	self->start = 0;
+    free(self->data);
+    self->capacity = MAX(1, 2 * self->size);
+    self->data = aux;
+    self->start = 0;
 }
 
 bool is_empty(Queue *self) {
@@ -63,7 +63,7 @@ bool is_empty(Queue *self) {
 }
 
 void free_queue(Queue *self) {
-	free(self->data);
+    free(self->data);
 }
 
 int get(Queue *self, unsigned int position) {
@@ -72,5 +72,5 @@ int get(Queue *self, unsigned int position) {
         return -1;
     }
 
-   return self->data[position];
+    return self->data[position];
 }

@@ -1,10 +1,10 @@
 #include <stdbool.h>
 
 typedef struct {
-	int *data;
-	unsigned int capacity;
-	unsigned int size;
-	unsigned int start;
+    int *data;
+    unsigned int capacity;
+    unsigned int size;
+    unsigned int start;
 } Queue;
 
 void init(Queue *self);
