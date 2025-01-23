@@ -5,8 +5,11 @@ A queue is a data structure based on FIFO (First in, First out) principle. You c
 # Attributes
 
 `Data: T`: The pointer where elements are stored.
+
 `Capacity: uint`: The total capacity of objects the list can hold.
+
 `Size: uint`: The number of elements currently in the list.
+
 `Start: uint`: The start point of queue.
 
 # Operations
