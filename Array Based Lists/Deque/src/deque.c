@@ -14,10 +14,20 @@ void init(Deque *self) {
 }
 
 int get(Deque *self, unsigned int position) {
-   return self->data[(position + self->start) % self->capacity];     
+    if (position >= self->size) {
+        fprintf(stderr, "Invalid position\n");
+		return -1;
+    }
+	
+    return self->data[(position + self->start) % self->capacity];
 }
 
 int set(Deque *self, unsigned int position, int value) {
+	if (position >= self->size) {
+        fprintf(stderr, "Invalid position\n");
+		return -1;
+    }
+	
     int y = get(self, position);
     self->data[(position + self->start) % self->capacity] = value;
     return y;
@@ -40,22 +50,22 @@ void add(Deque *self, unsigned int position, int value) {
 }
 
 int deque_remove(Deque *self, unsigned int position) {
-	int x = self->data[(self->start + position) % self->capacity];
+    int x = self->data[(self->start + position) % self->capacity];
 
-	if (position < self->size / 2) {
-		for (int i = position; i >= 0; i--)
-			self->data[(self->start + i) % self->capacity] = self->data[(self->start + i - 1) % self->capacity];
-		self->start = (self->start + 1) % self->capacity;
-	} else
-		for (int i = position; i <= (int) self->size - 2; i++)
-			self->data[(self->start + i) % self->capacity] = self->data[(self->start + i + 1) % self->capacity];
+    if (position < self->size / 2) {
+        for (int i = position; i >= 0; i--)
+            self->data[(self->start + i) % self->capacity] = self->data[(self->start + i - 1) % self->capacity];
+        self->start = (self->start + 1) % self->capacity;
+    } else
+        for (int i = position; i <= (int) self->size - 2; i++)
+            self->data[(self->start + i) % self->capacity] = self->data[(self->start + i + 1) % self->capacity];
 
-	self->size--;
+    self->size--;
 
-	if (self->capacity >= self->size * 3)
-		resize(self);
+    if (self->capacity >= self->size * 3)
+        resize(self);
 
-	return x;
+    return x;
 }
 
 void resize(Deque *self) {
@@ -74,4 +84,3 @@ void resize(Deque *self) {
 bool is_full(Deque *self) {
     return self->size == self->capacity;
 }
-
